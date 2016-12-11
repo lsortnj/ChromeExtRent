@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+
+  "name": "惡房東現形器",
+  "description": "解決資訊不對稱問題，幫助大家降低租到爛房的機率",
+  "version": "1.0",
+
+  // "browser_action": {
+  //   "default_icon": "icon.png",
+  //   "default_popup": "popup.html"
+  // },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon" : "icon.png",
+    "default_title" : "惡房東現形器",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "webNavigation",
+    "declarativeContent"
+  ],
+  "content_scripts": [{
+    "run_at" :"document_end",
+    "matches": [
+      "https://*.591.com.tw/*",
+      "https://*.housefun.com.tw/*"
+    ],
+    "js": [
+      "libs/jquery-1.12.4.min.js",
+      "content_script.js"
+    ],
+    "css": [
+      "css/info_panel.css"
+    ]
+  }]
+}
