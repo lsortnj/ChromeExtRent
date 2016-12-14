@@ -28,7 +28,7 @@
   "content_scripts": [{
     "run_at" :"document_end",
     "matches": [
-      "https://*.591.com.tw/*",
+      "https://*.591.com.tw/rent-detail-*",
       "https://*.housefun.com.tw/*"
     ],
     "js": [
@@ -36,6 +36,8 @@
       "content_script.js"
     ],
     "css": [
+      "css/libs/bootstrap/bootstrap.min.css",
+      "css/libs/bootstrap/bootstrap-theme.min.css",
       "css/info_panel.css"
     ]
   }]
