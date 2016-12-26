@@ -25,6 +25,9 @@
     "webNavigation",
     "declarativeContent"
   ],
+  "web_accessible_resources": [
+    "js/*.js"
+  ],
   "content_scripts": [{
     "run_at" :"document_end",
     "matches": [
